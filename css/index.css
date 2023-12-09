@@ -10,9 +10,9 @@ body {
 }
 
 body {
-  /* background-image: url(../img/bg-mb-3.jpg);
+  background-image: url(../img/bg-mb-3.jpg);
   background-size: 100% 100%;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 
 #app {
@@ -29,6 +29,11 @@ body {
   position: absolute;
   z-index: 100;
   width: 100%;
+}
+
+#app .h5-box .audio-box {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-bar {

@@ -63,9 +63,10 @@ Vue.directive('fix', {
         // console.log(binding, 99999)
         const {
             direction,
+            position,
             value
         } = binding.value
-        el.style.position = 'sticky'
+        el.style.position = position || 'sticky'
         el.style[direction] = value + 'px'
         el.style.zIndex = 999999999
     }

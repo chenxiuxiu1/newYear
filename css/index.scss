@@ -11,6 +11,10 @@
     position: absolute;
     z-index: 100;
     width: 100%;
+    .audio-box {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 

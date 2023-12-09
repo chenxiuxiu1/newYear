@@ -18,7 +18,12 @@
 <body>
     <div id="app" v-cloak>
         <div class="h5-box">
-            <div class="nav-bar" v-fix="{direction:'top',value:0}">
+            <audio class="audio-box" autoplay loop controls="controls"
+                v-fix="{direction:'bottom',value:10,position:'fixed'}">
+                <source src="./img/我曾遇到一束光 - 叶斯淳.mp3">
+                </source>
+            </audio>
+            <div class="nav-bar" v-fix="{direction:'top',value:0,position:'sticky'}">
                 <van-nav-bar title="二零二三年度产品大会" left-text="" right-text="换肤" @click-left="onClickLeft"
                     @click-right="onClickRight" />
             </div>
