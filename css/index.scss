@@ -4,7 +4,7 @@
   position: relative;
   iframe {
     position: absolute;
-    top: 20px;
+    top: 0px;
     left: 0px;
   }
   .h5-box {
@@ -106,4 +106,8 @@
 .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
   border: none;
+}
+
+.van-nav-bar__text {
+  color: $textColor;
 }

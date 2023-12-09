@@ -884,7 +884,7 @@ function getRandomShellSize () {
 	const maxVariance = Math.min(2.5, baseSize)
 	const variance = Math.random() * maxVariance
 	const size = baseSize - variance
-	const height = maxVariance === 0 ? Math.random() : 1 - (variance / maxVariance)
+	const height = maxVariance === 0 ? Math.random() : 1.8 - (variance / maxVariance)
 	const centerOffset = Math.random() * (1 - height * 0.65) * 0.6
 	const x = Math.random() < 0.5 ? 0.5 - centerOffset : 0.5 + centerOffset
 	return {

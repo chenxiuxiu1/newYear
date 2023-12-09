@@ -10,9 +10,9 @@ body {
 }
 
 body {
-  background-image: url(../img/bg-mb-3.jpg);
+  /* background-image: url(../img/bg-mb-3.jpg);
   background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 #app {
@@ -21,7 +21,7 @@ body {
 
 #app iframe {
   position: absolute;
-  top: 20px;
+  top: 0px;
   left: 0px;
 }
 
@@ -123,4 +123,8 @@ body {
 .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
   border: none;
+}
+
+.van-nav-bar__text {
+  color: #7a6dd6;
 }
