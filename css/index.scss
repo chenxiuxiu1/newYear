@@ -1,0 +1,109 @@
+@import '..\\css/common-h5.scss';
+
+#app {
+  position: relative;
+  iframe {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+  }
+  .h5-box {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+  }
+}
+
+.nav-bar {
+  width: 100%;
+
+  .van-nav-bar__title {
+    color: $textColor;
+    font-weight: 700;
+  }
+}
+
+.countdown {
+  background-color: #fff;
+  border-radius: rpx(50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: rpx(100);
+  margin: rpx(20);
+  .van-count-down {
+    color: $textColor;
+  }
+}
+
+.swiper-box {
+  height: rpx(350);
+  margin-top: rpx(30);
+  margin-bottom: rpx(30);
+  padding: 0 rpx(20);
+  .van-swipe {
+    height: 100%;
+    border-radius: rpx(50);
+    .van-swipe-item {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.common-card {
+  padding: rpx(30);
+
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: rpx(30);
+    color: $textColor1;
+    font-size: 18px;
+    .text {
+      margin-left: rpx(12);
+    }
+  }
+
+  .card-body {
+    background-color: #fff;
+    border-radius: rpx(50);
+    min-height: rpx(100);
+    padding: rpx(20);
+  }
+}
+
+.v-collapse {
+  .van-cell__title {
+    .custom-title {
+      font-size: 16px;
+      color: $textColor;
+    }
+  }
+  .content {
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: rpx(20);
+      padding-bottom: rpx(10);
+      border-bottom: 1px solid rgba(#ccc, 0.2);
+      img {
+        width: rpx(100);
+        height: rpx(100);
+        border-radius: 50%;
+        margin-right: rpx(30);
+      }
+      font-size: 16px;
+      color: $textColor;
+    }
+  }
+}
+.van-cell::after {
+  border: none;
+}
+.van-hairline--top-bottom::after,
+.van-hairline-unset--top-bottom::after {
+  border: none;
+}

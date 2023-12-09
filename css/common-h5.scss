@@ -1,0 +1,23 @@
+$screen-width: 750;
+$textColor: #7a6dd6;
+$textColor1: #b9242c;
+@function rpx($px) {
+  @return $px/$screen-width * 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app,
+html,
+body {
+  height: 1900px;
+  width: 100%;
+}
+
+body {
+  background-image: url(../img/bg-mb-3.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
