@@ -9,12 +9,6 @@ body {
   width: 100%;
 }
 
-body {
-  background-image: url(../img/bg-mb-3.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
-
 #app {
   position: relative;
 }
@@ -28,16 +22,28 @@ body {
   }
 }
 
-#app .yanhua-box {
+#app .two {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url(../img/bg-mb-3.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#app .two .yanhua-box {
+  position: absolute;
   height: 10.66667vw;
   width: 10.66667vw;
   border-radius: 50%;
   right: 2.66667vw;
+  bottom: 2.66667vw;
+  z-index: 1000;
   background: url(../img/yanhua.jpg) no-repeat center center/100% 100%;
   animation: identifier 5s linear infinite;
 }
 
-#app .h5-box {
+#app .two .h5-box {
   position: absolute;
   z-index: 100;
   width: 100%;
@@ -46,7 +52,9 @@ body {
   flex-direction: column;
 }
 
-#app .h5-box .audio-box {
+#app .two .h5-box .audio-box {
+  position: absolute;
+  z-index: 1000;
   height: 16vw;
   width: 16vw;
   border-radius: 50%;
@@ -65,7 +73,7 @@ body {
   }
 }
 
-#app .h5-box .yanhua-box {
+#app .two .h5-box .yanhua-box {
   height: 10.66667vw;
   width: 10.66667vw;
   border-radius: 50%;
@@ -74,28 +82,28 @@ body {
   animation: identifier 5s linear infinite;
 }
 
-#app .h5-box .van-nav-bar__content {
+#app .two .h5-box .van-nav-bar__content {
   background-color: #000;
 }
 
-#app .h5-box .van-nav-bar__left {
+#app .two .h5-box .van-nav-bar__left {
   left: -16px;
 }
 
-#app .h5-box .van-nav-bar__left .logo {
+#app .two .h5-box .van-nav-bar__left .logo {
   width: 20vw;
   height: 100%;
   left: -16px;
   border-radius: 0.26667vw;
 }
 
-#app .iframe-box {
+#app .two .iframe-box {
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
-#app .iframe-box iframe {
+#app .two .iframe-box iframe {
   position: absolute;
   top: 0px;
   left: 0px;

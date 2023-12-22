@@ -17,173 +17,183 @@
 
 <body>
     <div id="app" v-cloak>
-        <div class="yanhua-box" @click="cotrolhandle" v-fix="{direction:'bottom',value:10,position:'fixed'}">
-        </div>
-        <div class="h5-box" v-show="isShow">
-            <div class="audio-box" @click="autioCotrol" v-fix="{direction:'bottom',value:10,position:'fixed'}">
-                <audio id="myAudio" v-show="false" class="audio-box" id="bg-music" autoplay preload="auto" loop
-                    controls="controls">
-                    <source src="./img/我曾遇到一束光 - 叶斯淳 (1).mp3">
-                    </source>
-                </audio>
-            </div>
+        <van-swipe style="height: 100%;" :loop="false" vertical>
+            <van-swipe-item>1</van-swipe-item>
+            <van-swipe-item>
+                <div class="two">
+                    <div class="yanhua-box" @click="cotrolhandle">
+                    </div>
+                    <div class="h5-box" v-show="isShow">
+                        <div class="audio-box" @click="autioCotrol">
+                            <audio id="myAudio" v-show="false" class="audio-box" id="bg-music" autoplay preload="auto"
+                                loop controls="controls">
+                                <source src="./img/我曾遇到一束光 - 叶斯淳 (1).mp3">
+                                </source>
+                            </audio>
+                        </div>
+                        <div class="nav-bar" v-fix="{direction:'top',value:0,position:'sticky'}">
+                            <van-nav-bar title="二零二三年度产品大会" left-text="" @click-left="onClickLeft"
+                                @click-right="onClickRight">
+                                <template #left>
+                                    <img class="logo" @click="viewHandle('./img/logo.jpg')" src="./img/logo.jpg" alt="">
+                                </template>
+                        </div>
+                        <div class="content">
+                            <div class="swiper-box">
+                                <van-swipe :autoplay="3000">
+                                    <van-swipe-item v-for="(image, index) in images" :key="index">
+                                        <img :src="image" @click="viewHandle(image)" />
+                                    </van-swipe-item>
+                                </van-swipe>
+                            </div>
+                            <div class="countdown">
+                                <van-count-down :time="time" format="DD 天 HH 时 mm 分 ss 秒 SS 毫秒" millisecond />
+                            </div>
+                            <van-swipe vertical style="height: 500px;" :loop="false">
+                                <van-swipe-item>
+                                    <common-card title="会议议程">
+                                        <v-collapse title="9：30-10：00" active="1">
+                                            开场词:暖场游戏、社区介绍（是什么/为什么/怎末办）、致辞
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="10：00-12：30" active="1">
+                                            <div class="item" v-for="user in userList[0]">
+                                                <div class="left">
+                                                    <img @click="viewHandle(user.img)" :src="user.img" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    {{user.text}}
+                                                </div>
+                                            </div>
 
-            <div class="nav-bar" v-fix="{direction:'top',value:0,position:'sticky'}">
-                <van-nav-bar title="二零二三年度产品大会" left-text="" @click-left="onClickLeft" @click-right="onClickRight">
-                    <template #left>
-                        <img class="logo" @click="viewHandle('./img/logo.jpg')" src="./img/logo.jpg" alt="">
-                    </template>
-            </div>
-            <div class="content">
-                <div class="swiper-box">
-                    <van-swipe :autoplay="3000">
-                        <van-swipe-item v-for="(image, index) in images" :key="index">
-                            <img :src="image" @click="viewHandle(image)" />
-                        </van-swipe-item>
-                    </van-swipe>
+                                        </v-collapse>
+
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="12：30-14：00" active="1">
+                                            午饭
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="14：00-16：00" active="1">
+                                        </v-collapse>
+                                    </common-card>
+                                </van-swipe-item>
+                                <van-swipe-item>
+                                    <common-card>
+                                        <v-collapse title="16：00-16：10" active="1">
+                                            茶歇
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="16：10-18：10" active="1">
+                                            <div class="item" v-for="user in userList[1]">
+                                                <div class="left">
+                                                    <img @click="viewHandle(user.img)" :src="user.img" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    {{user.text}}
+                                                </div>
+                                            </div>
+
+                                        </v-collapse>
+
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="18：10-18：30" active="1">
+                                            致谢闭幕
+                                            <div class="item" v-for="user in userList[2]">
+                                                <div class="left">
+                                                    <img @click="viewHandle(user.img)" :src="user.img" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    {{user.text}}
+                                                </div>
+                                            </div>
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="18：30-20：30" active="1">
+                                            晚宴
+                                        </v-collapse>
+                                    </common-card>
+                                </van-swipe-item>
+                                <van-swipe-item>
+                                    <common-card>
+                                        <v-collapse title="20：30-21：30" active="1">
+                                            弹唱
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="21：30-24：00" active="1">
+                                            前往酒馆&跨年烟花
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card title="事项分工">
+                                        <v-collapse title="（一）宣传" active="1" icon="volume">
+                                            <p>
+                                                1.公众号文稿 1篇
+                                            </p>
+                                            <p>
+                                                2.海报1张
+                                            </p>
+
+                                        </v-collapse>
+                                    </common-card>
+                                    <common-card>
+                                        <v-collapse title="（二）记录" active="1" icon="bookmark">
+                                            <p>
+                                                1. 现场录频：个人电脑录频
+                                            </p>
+                                            <p>
+                                                2. 拍摄方案：绍路策划
+                                            </p>
+
+                                        </v-collapse>
+                                    </common-card>
+                                </van-swipe-item>
+                                <van-swipe-item>
+                                    <common-card>
+                                        <v-collapse title="（三）采购" active="1" icon="shop">
+                                            <p>
+                                                采购方案：李涛策划
+                                            </p>
+                                        </v-collapse>
+                                    </common-card>
+
+                                    <common-card>
+                                        <v-collapse title="（四）会务" active="1" icon="records">
+                                            <p>
+                                                会务方案：王天豪
+                                            </p>
+                                        </v-collapse>
+                                    </common-card>
+
+                                    <common-card>
+                                        <v-collapse title="（五）场地" active="1" icon="award">
+                                            <p>
+                                                12/16-12/17寻找
+                                            </p>
+                                        </v-collapse>
+                                    </common-card>
+                                </van-swipe-item>
+                            </van-swipe>
+
+
+
+                        </div>
+                    </div>
+                    <div class="iframe-box" v-show="!isShow">
+                        <iframe class="children" src="./html5-canvas-fireworks-animation/index.html"
+                            style="width: 100%;height: 100%;" frameborder="0"></iframe>
+                    </div>
                 </div>
-                <div class="countdown">
-                    <van-count-down :time="time" format="DD 天 HH 时 mm 分 ss 秒 SS 毫秒" millisecond />
-                </div>
-                <van-swipe vertical style="height: 500px;" :loop="false">
-                    <van-swipe-item>
-                        <common-card title="会议议程">
-                            <v-collapse title="9：30-10：00" active="1">
-                                开场词:暖场游戏、社区介绍（是什么/为什么/怎末办）、致辞
-                            </v-collapse>
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="10：00-12：30" active="1">
-                                <div class="item" v-for="user in userList[0]">
-                                    <div class="left">
-                                        <img @click="viewHandle(user.img)" :src="user.img" alt="">
-                                    </div>
-                                    <div class="right">
-                                        {{user.text}}
-                                    </div>
-                                </div>
 
-                            </v-collapse>
-
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="12：30-14：00" active="1">
-                                午饭
-                            </v-collapse>
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="14：00-16：00" active="1">
-                            </v-collapse>
-                        </common-card>
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <common-card>
-                            <v-collapse title="16：00-16：10" active="1">
-                                茶歇
-                            </v-collapse>
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="16：10-18：10" active="1">
-                                <div class="item" v-for="user in userList[1]">
-                                    <div class="left">
-                                        <img @click="viewHandle(user.img)" :src="user.img" alt="">
-                                    </div>
-                                    <div class="right">
-                                        {{user.text}}
-                                    </div>
-                                </div>
-
-                            </v-collapse>
-
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="18：10-18：30" active="1">
-                                致谢闭幕
-                                <div class="item" v-for="user in userList[2]">
-                                    <div class="left">
-                                        <img @click="viewHandle(user.img)" :src="user.img" alt="">
-                                    </div>
-                                    <div class="right">
-                                        {{user.text}}
-                                    </div>
-                                </div>
-                            </v-collapse>
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="18：30-20：30" active="1">
-                                晚宴
-                            </v-collapse>
-                        </common-card>
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <common-card>
-                            <v-collapse title="20：30-21：30" active="1">
-                                弹唱
-                            </v-collapse>
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="21：30-24：00" active="1">
-                                前往酒馆&跨年烟花
-                            </v-collapse>
-                        </common-card>
-                        <common-card title="事项分工">
-                            <v-collapse title="（一）宣传" active="1" icon="volume">
-                                <p>
-                                    1.公众号文稿 1篇
-                                </p>
-                                <p>
-                                    2.海报1张
-                                </p>
-
-                            </v-collapse>
-                        </common-card>
-                        <common-card>
-                            <v-collapse title="（二）记录" active="1" icon="bookmark">
-                                <p>
-                                    1. 现场录频：个人电脑录频
-                                </p>
-                                <p>
-                                    2. 拍摄方案：绍路策划
-                                </p>
-
-                            </v-collapse>
-                        </common-card>
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <common-card>
-                            <v-collapse title="（三）采购" active="1" icon="shop">
-                                <p>
-                                    采购方案：李涛策划
-                                </p>
-                            </v-collapse>
-                        </common-card>
-
-                        <common-card>
-                            <v-collapse title="（四）会务" active="1" icon="records">
-                                <p>
-                                    会务方案：王天豪
-                                </p>
-                            </v-collapse>
-                        </common-card>
-
-                        <common-card>
-                            <v-collapse title="（五）场地" active="1" icon="award">
-                                <p>
-                                    12/16-12/17寻找
-                                </p>
-                            </v-collapse>
-                        </common-card>
-                    </van-swipe-item>
-                </van-swipe>
-
-
-
-            </div>
-        </div>
-        <div class="iframe-box" v-show="!isShow">
-            <iframe class="children" src="./html5-canvas-fireworks-animation/index.html"
-                style="width: 100%;height: 100%;" frameborder="0"></iframe>
-        </div>
+            </van-swipe-item>
+            <van-swipe-item>3</van-swipe-item>
+            <van-swipe-item>4</van-swipe-item>
+        </van-swipe>
     </div>
     <script type="text/javascript">
 
