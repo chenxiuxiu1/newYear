@@ -27,17 +27,6 @@ const GRAVITY = 0.9 // Acceleration in px/s
 let simSpeed = 1
 
 window.onmessage = function (e) {
-	const imgList = [
-		'../img/bg-1.webp',
-		'../img/bg-2.webp',
-		'../img/bg-3.webp',
-		'../img/bg-mb-1.jpg',
-		'../img/bg-mb-2.jpg',
-		'../img/bg-mb-3.jpg',
-		'../img/bg-mb-4.jpg',
-	]
-	var randomNumber = Math.floor(Math.random() * 7)
-	appNodes.canvasContainer.style.backgroundImage = `url(${imgList[randomNumber]})`
 
 }
 function getDefaultScaleFactor () {

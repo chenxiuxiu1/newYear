@@ -5,7 +5,7 @@
 #app,
 html,
 body {
-  height: 1900px;
+  height: 100%;
   width: 100%;
 }
 
@@ -19,21 +19,86 @@ body {
   position: relative;
 }
 
-#app iframe {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+@keyframes identifier {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#app .yanhua-box {
+  height: 10.66667vw;
+  width: 10.66667vw;
+  border-radius: 50%;
+  right: 2.66667vw;
+  background: url(../img/yanhua.jpg) no-repeat center center/100% 100%;
+  animation: identifier 5s linear infinite;
 }
 
 #app .h5-box {
   position: absolute;
   z-index: 100;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #app .h5-box .audio-box {
-  left: 50%;
-  transform: translateX(-50%);
+  height: 16vw;
+  width: 16vw;
+  border-radius: 50%;
+  right: 2.66667vw;
+  top: 13.33333vw;
+  background: url(../img/autio-icon2.webp) no-repeat center center/100% 100%;
+  animation: identifier 3s linear infinite;
+}
+
+@keyframes identifier {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#app .h5-box .yanhua-box {
+  height: 10.66667vw;
+  width: 10.66667vw;
+  border-radius: 50%;
+  right: 2.66667vw;
+  background: url(../img/yanhua.jpg) no-repeat center center/100% 100%;
+  animation: identifier 5s linear infinite;
+}
+
+#app .h5-box .van-nav-bar__content {
+  background-color: #000;
+}
+
+#app .h5-box .van-nav-bar__left {
+  left: -16px;
+}
+
+#app .h5-box .van-nav-bar__left .logo {
+  width: 20vw;
+  height: 100%;
+  left: -16px;
+  border-radius: 0.26667vw;
+}
+
+#app .iframe-box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#app .iframe-box iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .nav-bar {
@@ -41,7 +106,7 @@ body {
 }
 
 .nav-bar .van-nav-bar__title {
-  color: #7a6dd6;
+  color: #5ac1d3;
   font-weight: 700;
 }
 
@@ -132,4 +197,8 @@ body {
 
 .van-nav-bar__text {
   color: #7a6dd6;
+}
+
+.van-swipe__indicators {
+  display: none;
 }
