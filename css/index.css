@@ -136,7 +136,7 @@ body {
 #app .box-one .bottom .text-box .text2,
 #app .common1 .bottom .text-box .text2 {
   font-size: 4vw;
-  letter-spacing: 2vw;
+  letter-spacing: 0.66667vw;
   margin-bottom: 5.33333vw;
   margin-left: -2.66667vw;
 }
@@ -149,6 +149,7 @@ body {
   transform: translate(-50%, -50%);
   font-size: 16vw;
   color: #fbd496;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   animation: center 1.5s ease-in-out;
   font-family: 'Muli', sans-serif;
 }
