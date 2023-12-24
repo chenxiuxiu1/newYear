@@ -2,10 +2,12 @@
 
 #app {
   position: relative;
+
   @keyframes identifier {
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(360deg);
     }
@@ -342,6 +344,7 @@
       position: absolute;
       height: rpx(80);
       width: rpx(80);
+      bottom: rpx(20);
       border-radius: 50%;
       right: rpx(20);
       bottom: rpx(20);
@@ -433,6 +436,7 @@
   align-items: center;
   height: rpx(100);
   margin: rpx(20);
+
   .van-count-down {
     color: $textColor;
   }
@@ -443,9 +447,11 @@
   margin-top: rpx(30);
   margin-bottom: rpx(30);
   padding: 0 rpx(20);
+
   .van-swipe {
     height: 100%;
     border-radius: rpx(50);
+
     .van-swipe-item {
       img {
         height: 100%;
@@ -464,6 +470,7 @@
     margin-bottom: rpx(30);
     color: $textColor1;
     font-size: 18px;
+
     .text {
       margin-left: rpx(12);
     }
@@ -484,6 +491,7 @@
       color: $textColor;
     }
   }
+
   .content {
     .item {
       display: flex;
@@ -491,20 +499,24 @@
       margin-bottom: rpx(20);
       padding-bottom: rpx(10);
       border-bottom: 1px solid rgba(#ccc, 0.2);
+
       img {
         width: rpx(100);
         height: rpx(100);
         border-radius: 50%;
         margin-right: rpx(30);
       }
+
       font-size: 16px;
       color: $textColor;
     }
   }
 }
+
 .van-cell::after {
   border: none;
 }
+
 .van-hairline--top-bottom::after,
 .van-hairline-unset--top-bottom::after {
   border: none;
@@ -513,6 +525,7 @@
 .van-nav-bar__text {
   color: $textColor;
 }
+
 .van-swipe__indicators {
   display: none;
 }

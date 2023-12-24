@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -447,6 +448,7 @@ body {
   position: absolute;
   height: 10.66667vw;
   width: 10.66667vw;
+  bottom: 2.66667vw;
   border-radius: 50%;
   right: 2.66667vw;
   bottom: 2.66667vw;
