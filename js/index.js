@@ -15,28 +15,31 @@ const pageConfig = {
                     text: "主持人：王天豪"
                 },
                 {
-                    img: "./img/user.webp",
+                    img: "./img/user3.jpg",
                     text: "主持人：樊旭东"
                 }],
                 [{
-                    img: "./img/user.webp",
+                    img: "./img/user4.jpg",
                     text: "主持人：张绍路"
                 },
                 {
-                    img: "./img/user.webp",
+                    img: "./img/user6.jpg",
                     text: "主持人：陈欢"
                 }],
                 [{
-                    img: "./img/user.webp",
+                    img: "./img/user2.jpg",
                     text: "主持人：李涛"
                 },
                 {
-                    img: "./img/user.webp",
+                    img: "./img/user5.jpg",
                     text: "主持人：宋小鹏"
                 }]
             ],
+            imgList: Array(6).fill().map((m, idx) => `./img/img${idx + 1}.jpg`),
+            imgList1: Array(6).fill().map((m, idx) => `./img/img${idx + 6}.jpg`),
             flag: false,
-            isShow: true
+            isShow: true,
+            current: 0
         }
     },
     created () { },
@@ -86,6 +89,9 @@ const pageConfig = {
             if (!this.isShow) {
                 this.postMessage()
             }
+        },
+        swipeChange (index) {
+            this.current = index
         }
     },
 

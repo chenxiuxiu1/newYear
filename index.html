@@ -17,10 +17,71 @@
 
 <body>
     <div id="app" v-cloak>
-        <van-swipe style="height: 100%;" :loop="false" vertical>
-            <van-swipe-item>1</van-swipe-item>
+        <van-swipe style="height: 100%;" ref="swiperRef" @change="swipeChange" :loop="false" vertical>
             <van-swipe-item>
-                <div class="two">
+                <div v-show="current==0" :class="['box-one']">
+                    <div class="top">
+                        <div class="logo">
+                            <img src="./img/logo.png" alt="">
+                        </div>
+                        <div class="text-box">
+
+                            <div class="text2">《亿点引力》社区</div>
+                            <div class="text3">^TTR^CTION</div>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div>
+                            邀
+                        </div>
+                        <div>
+                            请
+                        </div>
+                        <div>
+                            函
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="text-box">
+                            <div class="text1">时间：2024年1月1日</div>
+                            <div class="text2">地址：xxxxxx</div>
+                        </div>
+                    </div>
+                </div>
+            </van-swipe-item>
+            <van-swipe-item>
+                <div v-show="current==1" :class="['box-two']">
+                    <div class=" text-box">
+                        <p>
+                            想做什么，就去做吧，
+                        </p>
+                        <p>
+                            去遇见更好的自己！
+                        </p>
+                        <p>
+                            一个年轻人的社区，
+                        </p>
+                        <p>
+                            定期分享我们关于当下的“困惑”、
+                        </p>
+                        <p>
+                            “感悟“和“有趣"。
+                        </p>
+
+                    </div>
+                    <div class="box">
+                        <ul class="minbox">
+                            <li v-for="item in imgList" @click="viewHandle(item)"><img :src="item" alt=""></li>
+                        </ul>
+                        <ol class="maxbox">
+                            <li><img src="./img/img7.jpg" alt=""></li>
+                            <li v-for="item in imgList1"><img :src="item" alt=""></li>
+                        </ol>
+                    </div>
+                </div>
+            </van-swipe-item>
+            <van-swipe-item>
+                <div v-show="current==2" class="box-three">
                     <div class="yanhua-box" @click="cotrolhandle">
                     </div>
                     <div class="h5-box" v-show="isShow">
@@ -35,7 +96,7 @@
                             <van-nav-bar title="二零二三年度产品大会" left-text="" @click-left="onClickLeft"
                                 @click-right="onClickRight">
                                 <template #left>
-                                    <img class="logo" @click="viewHandle('./img/logo.jpg')" src="./img/logo.jpg" alt="">
+                                    <img class="logo" @click="viewHandle('./img/logo.png')" src="./img/logo.png" alt="">
                                 </template>
                         </div>
                         <div class="content">
@@ -52,12 +113,12 @@
                             <van-swipe vertical style="height: 500px;" :loop="false">
                                 <van-swipe-item>
                                     <common-card title="会议议程">
-                                        <v-collapse title="9：30-10：00" active="1">
+                                        <v-collapse title="9：30-10：00（开场）" active="1">
                                             开场词:暖场游戏、社区介绍（是什么/为什么/怎末办）、致辞
                                         </v-collapse>
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="10：00-12：30" active="1">
+                                        <v-collapse title="10：00-12：30（第一场）" active="1">
                                             <div class="item" v-for="user in userList[0]">
                                                 <div class="left">
                                                     <img @click="viewHandle(user.img)" :src="user.img" alt="">
@@ -71,23 +132,23 @@
 
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="12：30-14：00" active="1">
+                                        <v-collapse title="12：30-14：00 （午饭）" active="1">
                                             午饭
                                         </v-collapse>
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="14：00-16：00" active="1">
+                                        <v-collapse title="14：00-16：00（活动）" active="1">
                                         </v-collapse>
                                     </common-card>
                                 </van-swipe-item>
                                 <van-swipe-item>
                                     <common-card>
-                                        <v-collapse title="16：00-16：10" active="1">
+                                        <v-collapse title="16：00-16：10（茶歇）" active="1">
                                             茶歇
                                         </v-collapse>
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="16：10-18：10" active="1">
+                                        <v-collapse title="16：10-18：10 （第二场）" active="1">
                                             <div class="item" v-for="user in userList[1]">
                                                 <div class="left">
                                                     <img @click="viewHandle(user.img)" :src="user.img" alt="">
@@ -101,7 +162,7 @@
 
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="18：10-18：30" active="1">
+                                        <v-collapse title="18：10-18：30 （闭幕）" active="1">
                                             致谢闭幕
                                             <div class="item" v-for="user in userList[2]">
                                                 <div class="left">
@@ -114,19 +175,19 @@
                                         </v-collapse>
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="18：30-20：30" active="1">
+                                        <v-collapse title="18：30-20：30 （晚宴）" active="1">
                                             晚宴
                                         </v-collapse>
                                     </common-card>
                                 </van-swipe-item>
                                 <van-swipe-item>
                                     <common-card>
-                                        <v-collapse title="20：30-21：30" active="1">
+                                        <v-collapse title="20：30-21：30 （活动）" active="1">
                                             弹唱
                                         </v-collapse>
                                     </common-card>
                                     <common-card>
-                                        <v-collapse title="21：30-24：00" active="1">
+                                        <v-collapse title="21：30-24：00 （活动）" active="1">
                                             前往酒馆&跨年烟花
                                         </v-collapse>
                                     </common-card>
@@ -189,10 +250,7 @@
                             style="width: 100%;height: 100%;" frameborder="0"></iframe>
                     </div>
                 </div>
-
             </van-swipe-item>
-            <van-swipe-item>3</van-swipe-item>
-            <van-swipe-item>4</van-swipe-item>
         </van-swipe>
     </div>
     <script type="text/javascript">
