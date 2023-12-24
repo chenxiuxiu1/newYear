@@ -147,30 +147,56 @@
     }
     .text-box {
       position: absolute;
-      top: 10%;
+      top: 5%;
       left: 50%;
       transform: translateX(-50%);
       color: #71ccde;
       font-size: rpx(30);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       @keyframes typing {
-        from {
+        0% {
+          opacity: 0.5;
           width: 0;
         }
-      }
-      @keyframes caret {
-        50% {
-          border-right-color: #000;
+        100% {
+          opacity: 1;
         }
       }
+      // @keyframes caret {
+      //   50% {
+      //     opacity: 1;
+      //     border-right-color: #000;
+      //   }
+      // }
       p {
         font-size: 22px;
         width: 15em;
         white-space: nowrap;
         overflow: hidden;
-        animation: typing 5s steps(15), caret 0.5s steps(1) infinite;
+        opacity: 1;
+        padding: 0;
+        animation: typing 3s steps(15);
         // border-right: 1px solid transparent;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        // &:nth-child(2) {
+        //   opacity: 1;
+        //   animation: typing 3s steps(15) 3s;
+        // }
+        // &:nth-child(3) {
+        //   opacity: 1;
+        //   animation: typing 3s steps(15) 6s;
+        // }
+        // &:nth-child(4) {
+        //   opacity: 1;
+        //   animation: typing 3s steps(15) 9s;
+        // }
+        // &:nth-child(5) {
+        //   opacity: 1;
+        //   animation: typing 3s steps(15) 12s;
+        // }
       }
     }
     img {
@@ -430,12 +456,12 @@
     font-weight: 700;
   }
   .van-nav-bar {
-    background-color: rgba($textColor3, 0.5);
+    background-color: rgba($bgColor, 0.5);
   }
 }
 
 .countdown {
-  background-color: rgba($textColor3, 0.5);
+  background-color: rgba($bgColor, 0.5);
   border-radius: rpx(50);
   display: flex;
   justify-content: center;
@@ -483,7 +509,7 @@
 
   .card-body {
     // background-color: #fff;
-    background-color: rgba($textColor3, 0.5);
+    background-color: rgba($bgColor, 0.5);
     border-radius: rpx(50);
     min-height: rpx(100);
     padding: rpx(20);
