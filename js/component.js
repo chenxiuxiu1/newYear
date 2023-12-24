@@ -44,7 +44,7 @@ Vue.component('v-collapse', {
     <van-collapse-item name="1">
         <template #title>
             <div class="custom-title">
-                <van-icon :name="icon" color="#7a6dd6" />
+                <van-icon :name="icon" color="#000" />
                 <span>
                    {{title}}
                 </span>

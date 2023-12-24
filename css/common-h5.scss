@@ -2,6 +2,8 @@ $screen-width: 750;
 $textColor: #7a6dd6;
 $textColor1: #b9242c;
 $textColor2: #fbd79b;
+$textColor3: #43b6dc;
+$textColor4: #000;
 @function rpx($px) {
   @return $px/$screen-width * 100vw;
 }
